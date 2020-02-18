@@ -288,7 +288,8 @@ Results are paginated in groups of 10. Include a request argument to choose page
                 }
 ### POST /questions
 - General:
-If provided, updates the rating of the specified question. Returns the success value and id of the modified question.
+If provided, creates a new question. Returns the success value and id of the created question,
+a list of objects questions and the number of total_questions.
 
 - sample: 
     ```curl http://127.0.0.1:5000/questions -X POST -H "Content-Type: application/json" 
@@ -432,8 +433,7 @@ current_category, Results are paginated in groups of 10.
 
 - General:
 It provides a keywords for questions and return a list of questions objects,
-success value, and total number of questions, 
-current_category, Results are paginated in groups of 10.
+and the chosen category
 
 - Sample: `curl http://127.0.0.1:5000/questions -X POST -H "Content-Type: application/json" -d {"searchTerm":"title"}`
 
@@ -456,7 +456,7 @@ current_category, Results are paginated in groups of 10.
 
 - General:
 
-   It provides a keywords for questions and return a list of questions objects,
+   It provides a list of previous_questions objects and specific category (not necessary) and return a list of questions objects,
    success value, and list of previous_questions objects and quizCategory
    Results are paginated in groups of 10.
 
