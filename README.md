@@ -28,19 +28,21 @@ all requered packeges included in the file
 
 ### To run the application run the following commends :
 
-  export FLASK_APP=flaskr
-  export FLASK_ENV=Development
-  flask run
+```bash
+export FLASK_APP=flaskr
+export FLASK_ENV=Development
+flask run
+```
 
-  this commends put the application in development and directes the application to use the __init__.py file in our flaskr
-  folder . working in development mode shows an interactive debugger in the console and restarts the server whenever
-  changes are made. if running locally on windows, look for the commends in the flask docs.
+this commends put the application in development and directes the application to use the __init__.py file in our flaskr
+folder . working in development mode shows an interactive debugger in the console and restarts the server whenever
+changes are made. if running locally on windows, look for the commends in the flask docs.
 
-  the application is run on http://127.0.0.1:500/ by default
+the application is run on http://127.0.0.1:500/ by default
 
 ### Frontend :
 
-  From the fronend folder ../frontend run the following commends.
+From the fronend folder ../frontend run the following commends.
 
   ``` bash
   npm install // only once
@@ -92,8 +94,7 @@ The API will return three error types when requests fail:
 ## Endpoints
 
 ###GET /questions
-
-- General:
+ - General:
 
 Returns a list of question objects,categories object, success value, and total number of questions
 Results are paginated in groups of 10. Include a request argument to choose page number, starting from 1.
@@ -202,12 +203,12 @@ Results are paginated in groups of 10. Include a request argument to choose page
                     "success": true
                     }
                     
-      ### DELETE /questions/{question_id}
-        - General:
-                    Deletes the question of the given ID if it exists. Returns the id of the deleted question, success value, 
-                    total questions, and question list based on current page number to update the frontend.
-        - sample :           
-            curl -X DELETE http://127.0.0.1:5000/questions/38
+### DELETE /questions/{question_id}
+- General:
+        Deletes the question of the given ID if it exists. Returns the id of the deleted question, success value, 
+        total questions, and question list based on current page number to update the frontend.
+- sample :
+curl -X DELETE http://127.0.0.1:5000/questions/38
             
                 "deleted": 38,
                 "question": [
@@ -370,12 +371,12 @@ If provided, updates the rating of the specified question. Returns the success v
                 "total_questions": 36
                 }
 
-     ### GET categories/<int:categore_id>/questions
-      - General:
-                Returns a list of question objects under specific category(category_id), success value, and total number of questions, 
-                current_category, Results are paginated in groups of 10.
-                
-      - Sample: curl http://127.0.0.1:5000/categories/3/questions
+### GET categories/<int:categore_id>/questions
+- General:
+Returns a list of question objects under specific category(category_id), success value, and total number of questions, 
+current_category, Results are paginated in groups of 10.
+
+- Sample: curl http://127.0.0.1:5000/categories/3/questions
       
             "current_category":{
                      "type" : "Science",
@@ -427,16 +428,20 @@ If provided, updates the rating of the specified question. Returns the success v
             ],
             "total_questions": 35
             }
-     ### POST /searchQuestion 
-           
-     - General:
-           It provides a keywords for questions and return a list of questions objects,
-           success value, and total number of questions, 
-           current_category, Results are paginated in groups of 10.
-           
-     - Sample: curl http://127.0.0.1:5000/questions -X POST -H "Content-Type: application/json" -d {"searchTerm":"title"}
-           
-       "current_category": "Entertainment",
+### POST /searchQuestion 
+
+- General:
+It provides a keywords for questions and return a list of questions objects,
+success value, and total number of questions, 
+current_category, Results are paginated in groups of 10.
+
+- Sample: curl http://127.0.0.1:5000/questions -X POST -H "Content-Type: application/json" -d {"searchTerm":"title"}
+
+       "current_category":
+                {
+                 "type" : "Entertainment",
+                 "id" : "6"
+                 }          
        "questions": [{
             "answer": "Edward Scissorhands",
             "category": 6,
@@ -447,23 +452,23 @@ If provided, updates the rating of the specified question. Returns the success v
            "success": True,
            "total_questions": 35
 
-     ### POST /quizzes
-           
-       - General:
-       
-               It provides a keywords for questions and return a list of questions objects,
-               success value, and list of previous_questions objects and quizCategory
-               Results are paginated in groups of 10.
-           
-        - Sample: 
-                  curl http://127.0.0.1:5000/quizzes curl http://127.0.0.1:5000/questions -X POST -H "Content-Type: application/json" 
-                   -d {"previous_questions" : [{"answer": "Blood",
-                                                "category": 3,
-                                                "difficulty": 3,
-                                                "id": 35,
-                                                "question": "Hematology is a branch of medicine involving the study of what?"}],
-                                                {"type": "Science", "id": 3}
-                                                }      
+### POST /quizzes
+
+- General:
+
+   It provides a keywords for questions and return a list of questions objects,
+   success value, and list of previous_questions objects and quizCategory
+   Results are paginated in groups of 10.
+
+- Sample: 
+      curl http://127.0.0.1:5000/quizzes curl http://127.0.0.1:5000/questions -X POST -H "Content-Type: application/json" 
+       -d {"previous_questions" : [{"answer": "Blood",
+                                    "category": 3,
+                                    "difficulty": 3,
+                                    "id": 35,
+                                    "question": "Hematology is a branch of medicine involving the study of what?"}],
+                                    {"type": "Science", "id": 3}
+                                    }      
                     
                     "questions": [
                         {
