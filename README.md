@@ -9,7 +9,7 @@ category or delete any one of them or search about any question by some keywords
 you can add a new question or play a game by choosing from your favorite category or from 
 all the questions and answering 5 questions get your final score.
     
-all backend codes follow PEP8 guideline
+all backend codes follow `PEP8 guideline`
 
 ## User guideline :
  
@@ -23,7 +23,7 @@ Developers using the project should have python3, PiP, node installed on thier m
 
 ### Backend:
 
-From the backend folder `../backend` run pip install -r requirements.txt
+From the backend folder `../backend` run ```pip install -r requirements.txt```
 all requered packeges included in the file
 
 ### To run the application run the following commends :
@@ -34,7 +34,7 @@ export FLASK_ENV=Development
 flask run
 ```
 
-this commends put the application in development and directes the application to use the __init__.py file in our flaskr
+this commends put the application in development and directes the application to use the `__init__.py` file in our flaskr
 folder . working in development mode shows an interactive debugger in the console and restarts the server whenever
 changes are made. if running locally on windows, look for the commends in the flask docs.
 
@@ -42,7 +42,7 @@ the application is run on http://127.0.0.1:500/ by default
 
 ### Frontend :
 
-From the fronend folder ../frontend run the following commends.
+From the fronend folder `../frontend` run the following commends.
 
   ``` bash
   npm install // only once
@@ -99,7 +99,7 @@ The API will return three error types when requests fail:
 Returns a list of question objects,categories object, success value, and total number of questions
 Results are paginated in groups of 10. Include a request argument to choose page number, starting from 1.
 
-- Sample: curl http://127.0.0.1:5000/questions
+- Sample: `curl http://127.0.0.1:5000/questions`
    
                  "categories": {
                     "1": "Art",
@@ -190,7 +190,7 @@ Results are paginated in groups of 10. Include a request argument to choose page
 - Request Arguments: None
 - Returns: An object with a single key, categories, that contains a object of id: category_string key:value pairs.
 
--Sample: curl http://127.0.0.1:5000/categories
+-Sample: `curl http://127.0.0.1:5000/categories`
         
                     "categories": {
                         "1": "Art",
@@ -208,7 +208,7 @@ Results are paginated in groups of 10. Include a request argument to choose page
         Deletes the question of the given ID if it exists. Returns the id of the deleted question, success value, 
         total questions, and question list based on current page number to update the frontend.
 - sample :
-curl -X DELETE http://127.0.0.1:5000/questions/38
+`curl -X DELETE http://127.0.0.1:5000/questions/38`
             
                 "deleted": 38,
                 "question": [
@@ -291,8 +291,8 @@ curl -X DELETE http://127.0.0.1:5000/questions/38
 If provided, updates the rating of the specified question. Returns the success value and id of the modified question.
 
 - sample: 
-    curl http://127.0.0.1:5000/questions -X POST -H "Content-Type: application/json" 
-    -d {"id":38,"question":"what is name of the king?", "answer" : "Mounir", "difficulty":2,"category":6}
+    ```curl http://127.0.0.1:5000/questions -X POST -H "Content-Type: application/json" 
+    -d {"id":38,"question":"what is name of the king?", "answer" : "Mounir", "difficulty":2,"category":6}```
 
                 "created": 38,
                 "question": [
@@ -376,7 +376,7 @@ If provided, updates the rating of the specified question. Returns the success v
 Returns a list of question objects under specific category(category_id), success value, and total number of questions, 
 current_category, Results are paginated in groups of 10.
 
-- Sample: curl http://127.0.0.1:5000/categories/3/questions
+- Sample: `curl http://127.0.0.1:5000/categories/3/questions`
       
             "current_category":{
                      "type" : "Science",
@@ -435,7 +435,7 @@ It provides a keywords for questions and return a list of questions objects,
 success value, and total number of questions, 
 current_category, Results are paginated in groups of 10.
 
-- Sample: curl http://127.0.0.1:5000/questions -X POST -H "Content-Type: application/json" -d {"searchTerm":"title"}
+- Sample: `curl http://127.0.0.1:5000/questions -X POST -H "Content-Type: application/json" -d {"searchTerm":"title"}`
 
        "current_category":
                 {
@@ -461,14 +461,14 @@ current_category, Results are paginated in groups of 10.
    Results are paginated in groups of 10.
 
 - Sample: 
-      curl http://127.0.0.1:5000/quizzes curl http://127.0.0.1:5000/questions -X POST -H "Content-Type: application/json" 
-       -d {"previous_questions" : [{"answer": "Blood",
+      ```curl http://127.0.0.1:5000/quizzes -X POST -H "Content-Type: application/json" 
+         -d {"previous_questions" : [{"answer": "Blood",
                                     "category": 3,
                                     "difficulty": 3,
                                     "id": 35,
                                     "question": "Hematology is a branch of medicine involving the study of what?"}],
                                     {"type": "Science", "id": 3}
-                                    }      
+                                    }```     
                     
                     "questions": [
                         {
