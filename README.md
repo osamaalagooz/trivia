@@ -13,7 +13,7 @@ all backend codes follow `PEP8 guideline`
 
 ## User guideline :
  
-To play the game should be at least 6 questions at the choosen category.
+To play the game should be at least 6 questions at the chosen category.
 
 ## Getting Started:
 
