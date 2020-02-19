@@ -522,6 +522,10 @@ and the chosen category
                         "id": 3
                     }
 
+## Author:
+
+### Osama 
+### Udacity Team
 
 
                    
