@@ -524,8 +524,8 @@ and the chosen category
 
 ## Author:
 
-### Osama 
-### Udacity Team
+### Osama (for the Back-End)
+### Udacity Team (for the Front-End)
 
 
                    
